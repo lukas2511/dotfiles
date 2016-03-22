@@ -1,0 +1,41 @@
+# Config
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+# Resize Bindings
+bind right:alt       resize +5% +0
+bind left:alt        resize -5% +0
+bind up:alt          resize +0   -5%
+bind down:alt        resize +0   +5%
+bind right:ctrl;alt  resize -5% +0 bottom-right
+bind left:ctrl;alt   resize +5% +0 bottom-right
+bind up:ctrl;alt     resize +0   +5% bottom-right
+bind down:ctrl;alt   resize +0   -5% bottom-right
+
+# Nudge Bindings
+bind right:shift;cmd nudge +5% +0
+bind left:shift;cmd  nudge -5% +0
+bind up:shift;cmd    nudge +0   -5%
+bind down:shift;cmd  nudge +0   +5%
+
+bind 1:cmd;shift throw 0
+bind 2:cmd;shift throw 1
+bind return:cmd;shift shell '/Users/lukas2511/.bin/new-iterm-window'
+
+# Focus Bindings
+bind right:cmd    focus right
+bind left:cmd     focus left
+bind up:cmd       focus up
+bind down:cmd     focus down
+bind up:cmd;ctrl   focus behind
+bind down:cmd;ctrl focus behind
+
+# Reload config
+bind r:cmd;shift relaunch
+
+# Grid
+bind esc:ctrl grid
+
+# Window Hints
+bind esc:cmd hint
