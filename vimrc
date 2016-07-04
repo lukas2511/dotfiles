@@ -90,6 +90,19 @@ function s:setupMarkup()
 endfunction
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
+" python
+fu Select_tab_style()
+  if search('^\t', 'n', 150)
+    set noexpandtab
+  el
+    set expandtab
+  en
+endf
+
+"au BufRead,BufNewFile *.py,*.pyw call Select_py_style()
+au BufRead,BufNewFile * call Select_tab_style()
+
+
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
 
