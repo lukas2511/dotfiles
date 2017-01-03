@@ -28,7 +28,7 @@ set nowrap
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set expandtab
+set noexpandtab
 
 " Show trailing spaces and highlight hard tabs
 set list listchars=tab:»·,trail:·
@@ -91,18 +91,16 @@ function s:setupMarkup()
 endfunction
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
-" python
+" try to detect indention style
 fu Select_tab_style()
-  if search('^\t', 'n', 150)
-    set noexpandtab
-  el
+  if search('^ ', 'n', 150)
     set expandtab
+  el
+    set noexpandtab
   en
 endf
 
-"au BufRead,BufNewFile *.py,*.pyw call Select_py_style()
 au BufRead,BufNewFile * call Select_tab_style()
-
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
