@@ -51,6 +51,7 @@ set hlsearch
 " Map Ctrl+l to clear highlighted searches
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
+set viminfo='20,<1000,s1000
 set pastetoggle=<F10>
 nnoremap <ESC>[1;3A :wincmd k<CR>
 nnoremap <ESC>[1;3B :wincmd j<CR>
