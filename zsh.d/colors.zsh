@@ -23,3 +23,4 @@ man() {
 }
 
 alias grep="grep --color=auto"
+alias ip="ip -c"
