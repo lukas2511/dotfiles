@@ -1,10 +1,12 @@
 [core]
   filemode = true
   excludesfile = ~/.dotfiles/git/excludes
+  quotepath = false
 
 [user]
   name = Lukas Schauer
   email = lukas@schauer.so
+  signingkey = 3C2F2605E078A1E18F4793909C4DBE6CF438F333
 
 [branch]
   autosetupmerge = true
@@ -26,3 +28,5 @@
 
 [github]
   user = lukas2511
+[commit]
+  gpgsign = true
