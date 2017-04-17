@@ -24,6 +24,4 @@ man() {
 
 alias grep="grep --color=auto"
 
-if [ -e /etc/arch-release ]; then
-	alias ip="ip -c"
-fi
+ip -c a > /dev/null 2>&1 && alias ip="ip -c"
