@@ -16,6 +16,8 @@ if [ -e /System ]; then
 	if [ ! -e ~/.slate ]; then ln -s ~/.dotfiles/slate ~/.slate; fi
 fi
 
+fpath=(~/.zsh.d/site-functions $fpath)
+
 # load config
 for config_file (~/.dotfiles/zsh.d/*.zsh); do
 	source $config_file
