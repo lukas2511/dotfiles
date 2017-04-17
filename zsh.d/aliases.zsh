@@ -6,7 +6,7 @@ alias ip4="ip -4"
 alias ip6="ip -6"
 
 ifconfig_ip_color_brief() {
-	for interface in $('ip' -br l | awk '{print $1}'); do
+	for interface in $('ip' -br l | awk '{print $1}' | cut -d'@' -f1); do
 		'ip' -br -c l show dev "${interface}"
 		'ip' -4 -br -c a show dev "${interface}"
 		'ip' -6 -br -c a show dev "${interface}"
@@ -15,7 +15,7 @@ ifconfig_ip_color_brief() {
 }
 
 ifconfig_ip() {
-	for interface in $('ip' l | grep '^[0-9d]' | awk '{print $2}' | cut -d':' -f1); do
+	for interface in $('ip' l | grep '^[0-9d]' | awk '{print $2}' | cut -d':' -f1 | cut -d'@' -f1); do
 		'ip' a show dev "${interface}"
 		echo
 	done
