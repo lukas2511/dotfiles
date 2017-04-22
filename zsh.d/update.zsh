@@ -4,6 +4,7 @@ update-dotfiles() {
 	git pull
 	git stash pop 2>/dev/null || true
 	popd > /dev/null
+	source ~/.dotfiles/zshrc
 }
 
 dotfiles-new-origin() {
