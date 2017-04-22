@@ -24,9 +24,23 @@ prompt_vcs () {
 	fi
 }
 
+trim() {
+	local var="$(cat)"
+	# remove leading whitespace characters
+	var="${var#"${var%%[![:space:]]*}"}"
+	# remove trailing whitespace characters
+	var="${var%"${var##*[![:space:]]}"}"   
+	printf "%s" "${var}"
+}
+
 function {
 	if [[ -n "$SSH_CLIENT" ]]; then
-		PROMPT_HOST=" ($HOST)"
+		if [[ -e "/etc/datacenter" ]]; then
+			DATACENTER="$(trim < /etc/datacenter)"
+			PROMPT_HOST=" ($DATACENTER/$HOST)"
+		else
+			PROMPT_HOST=" ($HOST)"
+		fi
 	else
 		PROMPT_HOST=''
 	fi
