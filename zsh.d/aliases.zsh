@@ -25,7 +25,7 @@ ifconfig() {
 	(
 		('ip' -4 -br -c a > /dev/null 2>&1 && ifconfig_ip_color_brief) ||
 		('ip' a > /dev/null 2>&1 && ifconfig_ip) ||
-		('ifconfig')
+		(command ifconfig)
 	) | awk '/^$/ {nlstack=nlstack "\n";next;} {printf "%s",nlstack; nlstack=""; print;}'
 }
 
