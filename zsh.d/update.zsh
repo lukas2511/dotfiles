@@ -5,3 +5,13 @@ update-dotfiles() {
 	git stash pop 2>/dev/null || true
 	popd > /dev/null
 }
+
+dotfiles-new-origin() {
+	cd ~/.dotfiles
+	git remote remove origin
+	git remote add origin ${1}
+	git fetch origin
+	git branch --set-upstream-to=origin/master master
+	update-dotfiles
+	popd > /dev/null
+}
