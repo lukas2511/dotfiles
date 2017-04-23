@@ -21,7 +21,7 @@ ifconfig_ip() {
 	done
 }
 
-ifconfig() {
+ifaces() {
 	(
 		('ip' -4 -br -c a > /dev/null 2>&1 && ifconfig_ip_color_brief) ||
 		('ip' a > /dev/null 2>&1 && ifconfig_ip) ||
