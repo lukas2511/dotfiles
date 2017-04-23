@@ -7,7 +7,6 @@ execute pathogen#infect()
 
 " Enable syntax highlighting
 syntax on
-filetype plugin indent on
 
 " Colorscheme
 let g:rehash256 = 1
@@ -29,6 +28,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set noexpandtab
+filetype plugin indent on
 
 " Show trailing spaces and highlight hard tabs
 set list listchars=tab:»·,trail:·
@@ -95,8 +95,6 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 fu Select_tab_style()
   if search('^ ', 'n', 150)
     set expandtab
-  el
-    set noexpandtab
   en
 endf
 
