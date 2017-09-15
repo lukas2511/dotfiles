@@ -5,8 +5,6 @@ else
 fi
 export PAGER='less'
 export LESS='-R'
-alias nano="${EDITOR}"
-alias pico="${EDITOR}"
 alias nvim="${EDITOR}"
 alias vim="${EDITOR}"
 alias vi="${EDITOR}"
