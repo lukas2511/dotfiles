@@ -5,6 +5,9 @@ set runtimepath+=~/.dotfiles/vim
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
+map <C-p> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
+
 " Enable syntax highlighting
 syntax on
 
