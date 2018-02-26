@@ -8,6 +8,9 @@ execute pathogen#infect()
 map <C-p> :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
 
+autocmd CursorMoved,CursorMovedI * diffupdate
+autocmd InsertEnter,InsertLeave * diffupdate
+
 " Enable syntax highlighting
 syntax on
 
@@ -56,6 +59,11 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 set viminfo='20,<1000,s1000
 set pastetoggle=<F10>
+
+nnoremap <ESC>Oa :wincmd k<CR>
+nnoremap <ESC>Ob :wincmd j<CR>
+nnoremap <ESC>[1;5D :wincmd h<CR>
+nnoremap <ESC>[1;5C :wincmd l<CR>
 nnoremap <ESC>[1;3A :wincmd k<CR>
 nnoremap <ESC>[1;3B :wincmd j<CR>
 nnoremap <ESC>[1;3D :wincmd h<CR>
