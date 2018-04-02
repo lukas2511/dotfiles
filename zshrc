@@ -10,6 +10,10 @@ fi
 
 fpath=(~/.zsh.d/site-functions $fpath)
 
+if [ -e ~/.zshrc.local ]; then
+	source ~/.zshrc.local
+fi
+
 # load config
 for config_file (~/.dotfiles/zsh.d/*.zsh); do
 	source $config_file
