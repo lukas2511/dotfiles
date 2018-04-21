@@ -93,8 +93,18 @@ set nofoldenable
 set backupdir=~/.vimbackup
 set directory=~/.vimbackup
 
-" Mikrotik script syntax highlighting
+" Additional syntax highlighting
 au BufRead,BufNewFile *.rsc set filetype=rsc 
+au BufNewFile,BufRead PKGBUILD    set filetype=PKGBUILD
+au BufNewFile,BufRead [Dd]ockerfile,Dockerfile.*,*.Dockerfile set filetype=dockerfile
+au BufNewFile,BufRead *.automount set filetype=systemd
+au BufNewFile,BufRead *.mount     set filetype=systemd
+au BufNewFile,BufRead *.path      set filetype=systemd
+au BufNewFile,BufRead *.service   set filetype=systemd
+au BufNewFile,BufRead *.socket    set filetype=systemd
+au BufNewFile,BufRead *.swap      set filetype=systemd
+au BufNewFile,BufRead *.target    set filetype=systemd
+au BufNewFile,BufRead *.timer     set filetype=systemd
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
