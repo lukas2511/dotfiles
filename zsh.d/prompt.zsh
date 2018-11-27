@@ -12,7 +12,11 @@ zstyle ':vcs_info:*' enable git
 add-zsh-hook precmd prompt_vcs
 
 prompt_vcs () {
-	vcs_info
+	if [ "$(git config --get oh-my-zsh.hide-status 2>/dev/null)" = "1" ]; then
+		vcs_info_msg_0_=""
+	else
+		vcs_info
+	fi
 	if [ "${vcs_info_msg_0_}" = "" ]; then
 		dir_status="%F{2}→%f"
 	elif [[ $(git diff --cached --name-status 2>/dev/null ) != "" ]]; then
