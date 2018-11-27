@@ -1,6 +1,10 @@
 set nocompatible
 set runtimepath+=~/.dotfiles/vim
 
+" Disable loading of zip plugin
+let g:loaded_zipPlugin= 1
+let g:loaded_zip      = 1
+
 " Initialize Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
