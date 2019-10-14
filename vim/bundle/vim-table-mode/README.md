@@ -18,8 +18,8 @@ There are several ways to do this
    add a git submodule for your plugin:
 
    ```sh
-$ cd ~/.vim
-$ git submodule add git@github.com:dhruvasagar/vim-table-mode.git bundle/table-mode
+   $ cd ~/.vim
+   $ git submodule add git@github.com:dhruvasagar/vim-table-mode.git bundle/table-mode
    ```
 3. Copy all files under autoload/, plugin/, doc/ to respective
    ~/.vim/autoload/, ~/.vim/plugin and ~/.vim/doc under UNIX or
