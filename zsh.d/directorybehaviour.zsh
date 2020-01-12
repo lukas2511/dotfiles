@@ -19,3 +19,14 @@ alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
 alias ltr='ls -ltr'
+
+rangercd() {
+	tmp="$(mktemp /tmp/zsh-XXXXXX)"
+	ranger --choosedir="${tmp}"
+	if [ -f "${tmp}" ]; then
+		dir="$(cat "${tmp}")"
+		rm "${tmp}"
+		[ -d "${dir}" ] && cd "${dir}"
+	fi
+}
+bindkey -s '^o' 'rangercd\n'
