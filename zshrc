@@ -20,6 +20,12 @@ for config_file (~/.dotfiles/zsh.d/*.zsh); do
 done
 
 # local overrides
+if [ -e ~/.dotfiles-local/zsh.d ]; then
+	for config_file (~/.dotfiles-local/zsh.d/*.zsh); do
+		source $config_file
+	done
+fi
+
 if [ -e ~/.zsh.d ]; then
 	for config_file (~/.zsh.d/*.zsh); do
 		source $config_file
