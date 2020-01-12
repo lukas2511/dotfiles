@@ -1,0 +1,15 @@
+running="$(uname -r | sed -e 's/-ARCH//g' -e 's/-arch/.arch/g')"
+echo "Running kernel: ${running}"
+if [ -e /var/cache/pacman/pkg/linux-${running}-x86_64.pkg* ]; then
+	echo Found kernel package: /var/cache/pacman/pkg/linux-${running}-x86_64.pkg*
+	echo "Press enter to continue, ctrl+c to abort"
+	read
+	sudo pacman -U /var/cache/pacman/pkg/linux-${running}-x86_64.pkg*
+	if [ -e /var/cache/pacman/pkg/linux-headers-${running}-x86_64.pkg* ]; then
+		sudo pacman -U /var/cache/pacman/pkg/linux-headers-${running}-x86_64.pkg*
+	else
+		echo "No kernel headers package for running kernel found"
+	fi
+else
+	echo "No kernel package for running kernel found"
+fi
