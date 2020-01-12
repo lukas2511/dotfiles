@@ -34,3 +34,4 @@ alias blackmagic-flash="blackmagic --batch-silent -ex 'load' -ex 'detach' -ex 'q
 
 alias java-settings="itweb-settings"
 
+alias wifi-menu="sudo wifi-menu"
