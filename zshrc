@@ -9,6 +9,7 @@ if [ ! -e ~/.gitconfig ]; then
 fi
 
 fpath=(~/.zsh.d/site-functions $fpath)
+fpath=(~/.dotfiles-local/zsh.d/site-functions $fpath)
 
 if [ -e ~/.zshrc.local ]; then
 	source ~/.zshrc.local
