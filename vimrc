@@ -20,7 +20,8 @@ syntax on
 
 " Colorscheme
 let g:rehash256 = 1
-colorscheme molokai
+colorscheme notmolokai
+" colorscheme default
 
 " Visual autocomplete for command menu
 set wildmenu
@@ -45,6 +46,9 @@ set list listchars=tab:»·,trail:·
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
+
+map <ESC>b :%!xxd<CR>
+map <ESC>B :%!xxd -r<CR>
 
 " Home/End Keys
 map <ESC>[H ^
@@ -149,7 +153,7 @@ if !has('gui_running')
 endif
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'notwombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
