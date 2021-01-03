@@ -51,7 +51,7 @@ function {
 }
 
 function prompt_char {
-	if [ $UID -eq 0 ]; then echo "%{$fg_bold[red]%}Ξ"; else echo "%{$fg_bold[green]%}Ξ"; fi
+	if [ $UID -eq 0 ]; then echo "%{$fg_bold[red]%}#"; else echo "%{$fg_bold[green]%}#"; fi
 }
 
 local ret_status="%(?:$(prompt_char):%{$fg_bold[red]%}%S%s%?)"
