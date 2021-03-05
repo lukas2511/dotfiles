@@ -1,3 +1,6 @@
+[init]
+  defaultBranch = potato
+
 [core]
   filemode = true
   excludesfile = ~/.dotfiles/git/excludes
