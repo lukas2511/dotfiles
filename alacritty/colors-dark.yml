@@ -1,0 +1,56 @@
+# Colors (Tomorrow Night Bright)
+colors:
+  # Default colors
+  primary:
+    foreground: '0xf8f8f2'
+    background: '0x1b1d1e'
+
+    # Bright and dim foreground colors
+    #
+    # The dimmed foreground color is calculated automatically if it is not present.
+    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+    # is `false`, the normal foreground color will be used.
+    #dim_foreground: '0x9a9a9a'
+    #bright_foreground: '0xffffff'
+
+  # Cursor colors
+  #
+  # Colors which should be used to draw the terminal cursor. If these are unset,
+  # the cursor color will be the inverse of the cell color.
+  cursor:
+    cursor: '0xff0000'
+  #  text: '0x000000'
+  
+  # Selection colors
+  #
+  # Colors which should be used to draw the selection area. If selection 
+  # background is unset, selection color will be the inverse of the cell colors. 
+  # If only text is unset the cell text color will remain the same.
+  #selection:
+  #  text: '0xeaeaea'
+  #  background: '0x404040'
+
+  # Normal colors
+  normal:
+    black:   '0x1b1d1e' # 0
+    red:     '0xb60050' # 1
+    green:   '0x88bb22' # 2
+    yellow:  '0xc47f2c' # 3
+    blue:    '0x30309b' # 4
+    magenta: '0x7e40a5' # 5
+    cyan:    '0x4699af' # 6
+    white:   '0x9999aa' # 7
+  
+  # Bright colors
+  bright:
+    black:   '0x303030' # 8
+    red:     '0xf92672' # 9
+    green:   '0x80ff00' # 10
+    yellow:  '0xffba68' # 11
+    blue:    '0x7070f0' # 12
+    magenta: '0xbb88dd' # 13
+    cyan:    '0x66d9ef' # 14
+    white:   '0xf8f8f2' # 15
+
+  indexed_colors: []
+
