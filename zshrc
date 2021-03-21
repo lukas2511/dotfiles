@@ -33,3 +33,6 @@ if [ -e ~/.zsh.d ]; then
 	done
 fi
 
+if [ -e ~/.dotfiles-local/zshrc.late ]; then
+	source ~/.dotfiles-local/zshrc.late
+fi
