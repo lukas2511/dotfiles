@@ -20,6 +20,22 @@ alias ll='ls -lh'
 alias la='ls -lAh'
 alias ltr='ls -ltr'
 
+function strcd {
+	echo "$(pwd)" > ~/.zsh-stored-cd
+}
+
+function clrcd {
+	rm -f ~/.zsh-stored-cd
+}
+
+function rescd() {
+	if [ -f ~/.zsh-stored-cd ]; then
+		cd "$(cat ~/.zsh-stored-cd)"
+	fi
+}
+
+rescd
+
 rangercd() {
 	tmp="$(mktemp /tmp/zsh-XXXXXX)"
 	ranger --choosedir="${tmp}"
