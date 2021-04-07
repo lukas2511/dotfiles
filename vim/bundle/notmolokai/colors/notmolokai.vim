@@ -18,7 +18,7 @@ endif
 let g:colors_name="notmolokai"
 
 " vertical split lines should look like a line instead of a dashed one
-set fillchars+=vert:│
+set fillchars+=vert:\|
 "
 " Support for 256-color terminal
 "
