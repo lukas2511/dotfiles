@@ -23,7 +23,6 @@ set fillchars+=vert:\|
 " Support for 256-color terminal
 "
 if &t_Co > 255
-   hi Normal                   ctermbg=0
    hi CursorLine               ctermbg=8   cterm=none
    hi CursorLineNr ctermfg=11               cterm=none
    hi Boolean         ctermfg=5
@@ -94,7 +93,7 @@ if &t_Co > 255
    hi Type            ctermfg=14                cterm=none
    hi Underlined      ctermfg=7               cterm=underline
 
-   hi VertSplit       ctermfg=8 ctermbg=0   cterm=bold
+   hi VertSplit       ctermfg=8    cterm=bold
    hi VisualNOS                   ctermbg=8
    hi Visual                      ctermbg=8
    hi WarningMsg      ctermfg=15 ctermbg=8   cterm=bold
@@ -103,13 +102,13 @@ if &t_Co > 255
    hi Comment         ctermfg=7
    hi CursorColumn                ctermbg=8
    hi ColorColumn                 ctermbg=8
-   hi LineNr          ctermfg=15 ctermbg=0
+   hi LineNr          ctermfg=15 
    hi NonText         ctermfg=7
 
    hi SpecialKey      ctermfg=7
 
    if exists("g:rehash256") && g:rehash256 == 1
-       hi Normal       ctermfg=15 ctermbg=0
+       hi Normal       ctermfg=15 
        hi CursorLine               ctermbg=8   cterm=none
        hi CursorLineNr ctermfg=11               cterm=none
 
@@ -141,13 +140,13 @@ if &t_Co > 255
        hi Visual                      ctermbg=8
 
        hi Comment         ctermfg=7
-       hi LineNr          ctermfg=8 ctermbg=0
+       hi LineNr          ctermfg=8 
        hi NonText         ctermfg=8
        hi SpecialKey      ctermfg=8
    endif
 end
 
-" Must be at the end, because of ctermbg=0 bug.
+" Must be at the end, because of  bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
 
