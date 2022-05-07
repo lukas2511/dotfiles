@@ -1,17 +1,28 @@
 #!/bin/zsh
 
+if [ -z "${DOTFILES:-}" ]; then
+	DOTFILES=~/.dotfiles
+fi
+
 # install
 if [ ! -e ~/.config ]; then mkdir ~/.config; fi
 
 if [ ! -e ~/.vimbackup ]; then mkdir ~/.vimbackup; fi
-if [ ! -e ~/.vimrc ]; then echo 'source ~/.dotfiles/vimrc' > ~/.vimrc; fi
-
-if [ ! -e ~/.gitconfig ]; then
-	ln -s ~/.dotfiles/git/config ~/.gitconfig
+if [ ! -e ~/.vimrc ]; then
+	echo "set runtimepath+=${DOTFILES}/vim" > ~/.vimrc
+	echo "source ${DOTFILES}/vimrc" >> ~/.vimrc
 fi
 
-if command -v alacritty >/dev/null; then
-	if [ ! -e ~/.config/alacritty ]; then ln -s ~/.dotfiles/alacritty ~/.config/alacritty; fi
+if [ ! -e ~/.gitconfig ]; then
+	ln -s ${DOTFILES}/git/config ~/.gitconfig
+fi
+
+if command -v alacritty >/dev/null && [ ! -e ~/.config/alacritty ]; then
+	mkdir ~/.config/alacritty
+	for file in colors-dark.yml colors-light.yml switchcolors.sh; do
+		ln -s ${DOTFILES}/alacritty/$file ~/.config/alacritty/$file
+	done
+	printf 'import:\n  - %s/alacritty/alacritty.yml\n  - /home/lukas2511/.config/alacritty/colors.yml' "${DOTFILES}" > ~/.config/alacritty/alacritty.yml
 	if [ ! -e ~/.config/alacritty/colors.yml ]; then ln -s colors-dark.yml ~/.config/alacritty/colors.yml; fi
 fi
 
@@ -23,7 +34,7 @@ if [ -e ~/.zshrc.local ]; then
 fi
 
 # load config
-for config_file (~/.dotfiles/zsh.d/*.zsh); do
+for config_file (${DOTFILES}/zsh.d/*.zsh); do
 	source $config_file
 done
 
