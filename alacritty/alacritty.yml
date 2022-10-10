@@ -12,9 +12,6 @@ env:
   # available, otherwise `xterm-256color` is used.
   TERM: xterm-256color
 
-import:
-  - /home/lukas2511/.config/alacritty/colors.yml
-
 window:
   # Window dimensions (changes require restart)
   #
@@ -61,7 +58,7 @@ window:
   # When true, alacritty starts maximized.
   start_maximized: false
 
-  opacity: 1.0
+  opacity: 0.95
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -90,7 +87,7 @@ font:
     style: Regular
 
   # Point size
-  size: 13.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
