@@ -1,7 +1,11 @@
 #
 # history
 #
-if [ -z $HISTFILE ]; then
+if [ -n "${CUSTOM_HISTFILE:-}" ]; then
+	HISTFILE="${CUSTOM_HISTFILE}"
+	unset CUSTOM_HISTFILE
+fi
+if [ -z "${HISTFILE:-}" ]; then
 	HISTFILE=$HOME/.zsh_history
 fi
 HISTSIZE=100000
