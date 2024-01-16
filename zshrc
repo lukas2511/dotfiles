@@ -19,11 +19,11 @@ fi
 
 if command -v alacritty >/dev/null && [ ! -e ~/.config/alacritty ]; then
 	mkdir ~/.config/alacritty
-	for file in colors-dark.yml colors-light.yml switchcolors.sh; do
+	for file in colors-dark.toml colors-light.toml switchcolors.sh; do
 		ln -s ${DOTFILES}/alacritty/$file ~/.config/alacritty/$file
 	done
-	printf 'import:\n  - %s/alacritty/alacritty.yml\n  - /home/lukas2511/.config/alacritty/colors.yml' "${DOTFILES}" > ~/.config/alacritty/alacritty.yml
-	if [ ! -e ~/.config/alacritty/colors.yml ]; then ln -s colors-dark.yml ~/.config/alacritty/colors.yml; fi
+	printf 'import = ["%s/alacritty/alacritty.toml", "%s/.config/alacritty/colors.toml"]' "${DOTFILES}" "${HOME}" > ~/.config/alacritty/alacritty.toml
+	if [ ! -e ~/.config/alacritty/colors.toml ]; then ln -s colors-dark.toml ~/.config/alacritty/colors.toml; fi
 fi
 
 fpath=(~/.zsh.d/site-functions $fpath)
